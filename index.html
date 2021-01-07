@@ -9,19 +9,44 @@
 </head>
 <body>
     <nav
-    class="navbar has-shadow"
+    class="navbar"
     role="navigation"
     aria-label="main navigation"
     >
       <div class="navbar-start">
         <div class="navbar-item">
           <div class="buttons">
-            <div class="button is-success" onClick=""></div> // add function
+            <div class="button is-light" onClick="">
               Add Row
             </div>
             <hr class="navbar-divider">
-            <div class="button is-warning" onClick=""> // add function
+            <div class="button is-light" onClick="">
               Add Column
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="navbar-item">
+          <div class="buttons">
+            <div class="button is-success" onclick="">
+              Fill All Cells
+            </div>
+            <div class="button is-warning" onclick="">
+              Fill Uncolored Cells
+            </div>
+            <div class="button is-danger" onClick="">
+              Clear Cells
+            </div>
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link is-arrowless">
+                Cell Color
+              </a>
+              <div class="navbar-dropdown">
+                <a onClick="" class="navbar-item" id="blue">Red</a>
+                <a onClick="" class="navbar-item" id="red">Blue</a>
+                <a onClick="" class="navbar-item" id="white">White</a>
+              </div>
             </div>
           </div>
         </div>
@@ -29,12 +54,12 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
-            <div class="button is-success" onClick=""> // add function
-              Remove row
+            <div class="button is-dark" onClick="addRow()">
+              Remove Row
             </div>
             <hr class="navbar-divider">
-            <div class="button is-warning" onClick=""> // add function
-              Remove column
+            <div class="button is-dark" onClick="addColumn()">
+              Remove Column
             </div>
           </div>
         </div>
