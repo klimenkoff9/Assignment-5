@@ -2,6 +2,7 @@ let cols = 0;
 var selectedColor = "#FFFFFF";
 const Cells = document.getElementsByTagName("td");
 
+// add row
 const addRow = () => {
   if (cols === 0) { 
       cols = 1;
@@ -20,7 +21,7 @@ const addRow = () => {
   }
 
 };
-
+// add Column
 const addColumn = () => {
     if (cols === 0) {
       cols = 1;
@@ -29,24 +30,26 @@ const addColumn = () => {
         cols++;
         const row = document.getElementsByClassName("row");
         const tableRow = Array.from(row);
-        tableRow.forEach((cell) => {
+        tableRow.forEach(cell => {
         const pixel = document.createElement("td");
         pixel.classList.add("pixel", "uncolored");
         cell.appendChild(pixel);
         });
     }
 };
+
 //remove row
 const removeRow = () => {
   const row = document.getElementsByClassName("row");
   const tableRow = Array.from(row);
   tableRow[0].remove();
 }
+
 //remove col
 const removeCol = () => {
   const cs = document.querySelectorAll("td");
   const tableCol = Array.from(cs);
-  tableCol.forEach((cell) => {
+  tableCol.forEach(cell => {
     if(tableCol.indexOf(cell) % cols == 0){
       cell.remove();
     }
@@ -58,7 +61,7 @@ const removeCol = () => {
 const fillAll = () => {
   const cs = document.querySelectorAll("td");
   const tableCol = Array.from(cs);
-  tableCol.forEach((cell) => {
+  tableCol.forEach(cell => {
     cell.style.backgroundColor = selectedColor;
   });
     
@@ -80,18 +83,19 @@ const setWhite = () => {
 const clearAll = () => {
     const cs = document.querySelectorAll("td");
     const tableCol = Array.from(cs);
-    tableCol.forEach((cell) => {
+    tableCol.forEach(cell => {
         cell.style.background = "#FFFFFF";
     });
 };
 
-// fill uncolored cells
+// fill uncolored cells 
+// D.K - feature doesn't work. Needs debugging
 const fillUncolored = () => {
     const cs = document.querySelectorAll("td");
     const tableCol = Array.from(cs);
-    tableCol.forEach((cell) => {
-        cell.addEventListener("mouseenter", function () {
-            cell.style.background = selectedColor;
+    tableCol.forEach(cell => {
+    cell.addEventListener("mouseenter", function () {
+    cell.style.background = selectedColor;
         });
     });
 }
