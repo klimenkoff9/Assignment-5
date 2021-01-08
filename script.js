@@ -1,18 +1,38 @@
+let cols = 0;
 
-console.log("Hello");
-const container = document.getElementById('container');
-let squares = [];
+const Cells = document.getElementsByTagName("td");
 
-function addRow(){
-    const div = document.createElement('div'); //create a div tag
-    div.classList.add("square"); // add style to the div
-    container.appendChild(div); // attach the div to the parent div
-    squares.push(div);
-}
-function addColumn(){
-    const div = document.createElement('div'); //create a div tag
-    div.classList.add("square");// add style to the div
-    div.style.float="left";
-    container.appendChild(div); // attach the div to the parent div
-    squares.push(div);
-}
+const addRow = () => {
+  if (cols === 0) { 
+      cols = 1;
+  }
+  const row = document.createElement("tr");
+  const table = document.getElementById("table");
+  row.classList.add("row");
+  table.appendChild(row);
+  
+
+
+  for (let i = 0; i < cols; i++) {
+    const pixel = document.createElement("td");
+    pixel.classList.add("pixel", "uncolored");
+    row.appendChild(pixel);
+  }
+
+};
+
+const addColumn = () => {
+    if (cols === 0) {
+      cols = 1;
+      addRow();
+    } else {
+        cols++;
+        const row = document.getElementsByClassName("row");
+        const tableRow = Array.from(row);
+        tableRow.forEach((cell) => {
+        const pixel = document.createElement("td");
+        pixel.classList.add("pixel", "uncolored");
+        cell.appendChild(pixel);
+        });
+    }
+};
