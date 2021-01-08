@@ -1,5 +1,5 @@
 let cols = 0;
-
+var selectedColor = "#FFFFFF";
 const Cells = document.getElementsByTagName("td");
 
 const addRow = () => {
@@ -53,3 +53,45 @@ const removeCol = () => {
   });
   cols--;
 };
+
+//fill all cells
+const fillAll = () => {
+  const cs = document.querySelectorAll("td");
+  const tableCol = Array.from(cs);
+  tableCol.forEach((cell) => {
+    cell.style.backgroundColor = selectedColor;
+  });
+    
+};
+//select red color;
+const setRed = () => {
+  selectedColor = "#FF0000";
+};
+//select blue color;
+const setBlue = () => {
+  selectedColor = "#0000FF";
+};
+//select white color;
+const setWhite = () => {
+  selectedColor = "#FFFFFF";
+};
+
+//clear all cells
+const clearAll = () => {
+    const cs = document.querySelectorAll("td");
+    const tableCol = Array.from(cs);
+    tableCol.forEach((cell) => {
+        cell.style.background = "#FFFFFF";
+    });
+};
+
+// fill uncolored cells
+const fillUncolored = () => {
+    const cs = document.querySelectorAll("td");
+    const tableCol = Array.from(cs);
+    tableCol.forEach((cell) => {
+        cell.addEventListener("mouseenter", function () {
+            cell.style.background = selectedColor;
+        });
+    });
+}
