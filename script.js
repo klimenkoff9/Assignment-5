@@ -36,12 +36,13 @@ const addColumn = () => {
         });
     }
 };
-
+//remove row
 const removeRow = () => {
   const row = document.getElementsByClassName("row");
   const tableRow = Array.from(row);
   tableRow[0].remove();
 }
+//remove col
 const removeCol = () => {
   const cs = document.querySelectorAll("td");
   const tableCol = Array.from(cs);
