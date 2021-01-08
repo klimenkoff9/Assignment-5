@@ -6,3 +6,9 @@ td {
     border: 3.5px solid black;
     width: 35px;
 }
+
+.square {
+    height: 35px;
+    width: 35px;
+    border: 3.5px solid black;
+}

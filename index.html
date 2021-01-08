@@ -16,9 +16,14 @@
       <div class="navbar-start">
         <div class="navbar-item">
           <div class="buttons">
-            <div class="button is-light" onClick="">Add Row</div>
+
+            <div class="button is-success" onClick="addRow()">Add Row</div>
+            </div>
             <hr class="navbar-divider">
-            <div class="button is-light" onClick="">Add Column</div>
+            <div class="button is-warning" onClick="addColumn()"> Add column
+
+            </div>
+
           </div>
         </div>
       </div>
@@ -57,6 +62,8 @@
       </div>
     </nav>
     <table id="table" draggable="false"></table>
+    <div id="container"></div>
+    
 </body>
 <script type="text/javascript" src="./script.js"></script>
 </html>
