@@ -36,3 +36,19 @@ const addColumn = () => {
         });
     }
 };
+
+const removeRow = () => {
+  const row = document.getElementsByClassName("row");
+  const tableRow = Array.from(row);
+  tableRow[0].remove();
+}
+const removeCol = () => {
+  const cs = document.querySelectorAll("td");
+  const tableCol = Array.from(cs);
+  tableCol.forEach((cell) => {
+    if(tableCol.indexOf(cell) % cols == 0){
+      cell.remove();
+    }
+  });
+  cols--;
+};
