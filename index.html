@@ -25,13 +25,13 @@
       <div>
         <div class="navbar-item">
           <div class="buttons">
-            <div class="button is-black" onclick="">
+            <div class="button is-black" onclick="fillAll()">
               Fill All Cells
             </div>
-            <div class="button is-black" onclick="">
+            <div class="button is-black" onclick="fillUncolored()">
               Fill Uncolored Cells
             </div>
-            <div class="button is-black" onClick="">
+            <div class="button is-black" onClick="clearAll()">
               Clear Cells
             </div>
             <div class="navbar-item has-dropdown is-hoverable">
@@ -39,9 +39,9 @@
                 Cell Color
               </a>
               <div class="navbar-dropdown">
-                <a onClick="" class="navbar-item" id="blue">Red</a>
-                <a onClick="" class="navbar-item" id="red">Blue</a>
-                <a onClick="" class="navbar-item" id="white">White</a>
+                <a onClick="setRed()" class="navbar-item" id="blue">Red</a>
+                <a onClick="setBlue()" class="navbar-item" id="red">Blue</a>
+                <a onClick="setWhite()" class="navbar-item" id="white">White</a>
               </div>
             </div>
           </div>
