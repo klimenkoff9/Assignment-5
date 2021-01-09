@@ -69,14 +69,17 @@ const fillAll = () => {
 //select red color;
 const setRed = () => {
   selectedColor = "#FF0000";
+  paintCells();
 };
 //select blue color;
 const setBlue = () => {
   selectedColor = "#0000FF";
+  paintCells();
 };
 //select white color;
 const setWhite = () => {
   selectedColor = "#FFFFFF";
+  paintCells();
 };
 
 //clear all cells
@@ -89,8 +92,14 @@ const clearAll = () => {
 };
 
 // fill uncolored cells 
-// D.K - feature doesn't work. Needs debugging
 const fillUncolored = () => {
+  const cs = document.querySelectorAll("td");
+  const tableCol = Array.from(cs);
+  tableCol.forEach(cell => {
+      cell.style.background = selectedColor;
+  });
+};
+const paintCells = () => {
     const cs = document.querySelectorAll("td");
     const tableCol = Array.from(cs);
     tableCol.forEach(cell => {
