@@ -87,7 +87,7 @@ const clearAll = () => {
     const cs = document.querySelectorAll("td");
     const tableCol = Array.from(cs);
     tableCol.forEach(cell => {
-        cell.style.background = "#FFFFFF";
+        cell.style.backgroundColor = "";
     });
 };
 
@@ -96,7 +96,9 @@ const fillUncolored = () => {
   const cs = document.querySelectorAll("td");
   const tableCol = Array.from(cs);
   tableCol.forEach(cell => {
-      cell.style.background = selectedColor;
+      if(cell.style.backgroundColor === ""){
+        cell.style.backgroundColor = selectedColor;
+      }
   });
 };
 const paintCells = () => {
@@ -104,7 +106,7 @@ const paintCells = () => {
     const tableCol = Array.from(cs);
     tableCol.forEach(cell => {
     cell.addEventListener("mouseenter", function () {
-    cell.style.background = selectedColor;
+    cell.style.backgroundColor = selectedColor;
         });
     });
 }
